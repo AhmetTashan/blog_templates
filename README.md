@@ -43,6 +43,8 @@ gulp w
 
 ## Katkıda bulunanlar
 
+[Taner Özel](https://github.com/tanerozel)
+
 
 ## Lisans
 
