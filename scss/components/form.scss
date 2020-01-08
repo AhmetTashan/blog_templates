@@ -1,0 +1,14 @@
+.form-control{
+	padding: 10px 15px;
+	border-radius: .25rem;
+	border: 1px solid #ced4da;
+	&:focus{
+		box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+		border-color: #80bdff;
+	}
+}
+.valid-feedback{
+	font-size: 10pt;
+	display: block;
+	margin-top: 5px;
+}

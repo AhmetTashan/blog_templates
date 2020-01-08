@@ -1,0 +1,22 @@
+// base file
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/formalize';
+@import 'base/mixin';
+@import 'base/global';
+
+// components
+@import 'components/icons';
+@import 'components/pagination';
+@import 'components/comments';
+@import 'components/form';
+@import 'components/button';
+@import 'components/highlightjs';
+
+// layout
+@import 'layout/header';
+@import 'layout/footer';
+
+//pages
+@import 'pages/home';
+@import 'pages/article';

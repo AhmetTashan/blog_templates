@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Yazı Sayfası</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+	<div class="article-container">
+		<div class="sidebar">
+			<div class="entry-meta">
+				<a href="/" class="avatar">
+					<img src="images/pp.jpg" alt="Ahmet Taşhan">
+				</a>
+				<a href="/" class="author-name">Ahmet Taşhan</a>
+				<div class="sidebar-menu">
+					<ul>
+						<li><a href="/">blog</a></li>
+						<li><a href="https://github.com/ahmettashan" target="_blank">projeler</a></li>
+						<li><a href="https://www.linkedin.com/in/ahmettashan" target="_blank">hakkımda</a></li>
+						<li><a href="https://twitter.com/ahmettashan" target="_blank">twitter</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<h1 class="head">
+				Dizinin anahtar ve değeri ile değişken adı ve değer ataması nasıl yapılır
+			</h1>
+			<div class="text-info">
+				Ahmet Taşhan • December 19, 2019 tarihinde yayınlandı.
+			</div>
+			<div class="content">
+				<p><img src="images/php-variable.png" alt="php değişkenler"></p>
+				<p><strong>Dizi;</strong> değerleri anahtarlarla ilişkilendiren, bir veya birden çok  verileriyi bir arada saklayan yapıya sahiptir. Bu yapıya kısaca veri kümesi diye biliriz. Bu veri kümesi farklı amaçlarla kullanabilir; personel listesi, Türkçe sözlük, haftanın günleri, yemek listesi, nöbetçi eczaneler gibi birçok verilerimizi saklayabiliriz.
+				</p><p>Genelde dizilerimizi şu şekillerde tanımlarız;
+				</p>
+<pre><code>$dizi = array(
+	"anahtar" = "deger",
+);
+// ya da
+$dizi["anahtar"] = "deger";</code></pre>
+					<p>Dizi bizi en azından beni bir çok kafa karıştıracak değişken adlarından kurtarıyor. Bundan dolayı dizileri değişkenlerden çok tercih ediyorum. Neyse konumuza dönelim. ;) Şimdi sizlere yukarıda gösterdiğimiz tanımlanmış dizi elemanlarını <code>$anahtar = "deger"</code> şekline dönüştürmenin bir yolunu göstermeye çalışalım.</p>
+<pre><code>foreach ( $dizi AS $anahtar = $deger )
+{
+	${$anahtar} = $deger;
+}</code></pre>
+				<p>Öncelikle diziyi döngüye girdiriyoruz ve anahtar'ı <code>${$anahtar}</code>şeklinde değişken adını tanımlıyoruz, daha sonra o anahtara ait değeri tanımlanan değişkene atıyoruz. Hepsi bu kadar. :)
+				</p><h2>Nerede kullanıyorum?</h2><p>Örneğin SEO adında ve parametreleri olan bir fonksiyon tanımlayalım;
+				</p><pre><code>function SEO ( $title = "", $desc = "", $imgurl ="", $url = "" )
+{
+	// fonksiyon icerigi
+}</code></pre>
+				<p>Dikkat ederseniz oluşturduğumuz fonksiyonda <code>$title</code>, <code>$desc</code>, <code>$imgurl</code>, <code>$url</code> gibi parametrelerimiz sırasıyla girilmiştir. Bura kadar hiçbir sıkıntı yok. Bu fonksiyonu tanımladıktan belirli bir zaman sonra parametre sırasıyla girmesi benim biraz zoruma gidiyor. Bunun içinde yukarıdaki gibi bir dizi tanımlayıp ve bu dizinin anahtarının adını değişken adı yapıp ve değişkene değerlerini atayarak bu sorunumu giderebiliyorum.</p><p>Sonuç olarak fonksiyonumun son hali;<br>
+				</p><pre><code>function SEO ( $seo_content )
+{
+	foreach ( $seo_content AS $anahtar = $deger )
+	{
+		${$anahtar} = $deger;
+	}
+	// artık degiskenlerim hazir, kullanima gecebilirim.
+	// fonksiyon icerigi
+}
+
+$content = array(
+	'title' = 'Sayfanın Başlığı',
+	'desc' = 'Sayfaya ait 160 karekterli kısa bir açıklama alanı.',
+	'imgurl' = 'sayfaya_ait_resim_yolu.jpg',
+	'url' = 'sayfanın tam yolu'
+);
+SEO($content);</code></pre>
+					<h4>Kaynakçalar:</h4><ol>
+					<li><a href="https://github.com/trkodlama/makaleler/blob/master/_posts/2011-03-14-keyvalue-dizisi-araciligiyla-degisken-adi-belirleme.md" target="_blank">Github</a></li>
+					<li><a href="http://php.net/manual/tr/language.types.array.php" target="_blank">Php.net</a></li></ol>
+			</div>
+			<div class="shared">
+				<a href="" class="button facebook">
+					<span class="facebook-icon"></span> <span>paylas</span>
+				</a>
+				<a href="" class="button twitter">
+					<span class="twitter-icon"></span> <span>paylas</span>
+				</a>
+			</div>
+			<div class="comments" id="comment-list">
+				<h4 class="uppercase">yorumlar (3)</h4>
+				<div class="comments-box">
+					<div class="comment">
+						<div class="comment-header">
+							<div class="avatar">
+								<img src="https://www.gravatar.com/avatar/7d2988213df56673731db26cb8afcad2?s=60&d=mm&r=g" alt="Ahmet Taşhan">
+							</div>
+							<div class="author">
+								<span class="name">Ahmet Taşhan</span>
+								<span class="time">December 31, 2019</span>
+							</div>
+						</div>
+						<div class="comment-text">
+							Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. 
+						</div>
+					</div>
+				</div>
+				<h4>"Dizinin anahtar ve değeri ile değişken adı ve değer ataması nasıl yapılır" <span class="uppercase">adlı makale yoruma kapalıdır.</span></h4>
+				<h4 class="uppercase">yorum yap</h4>
+				<div class="comment-form" id="remark">
+					<form action="">
+						<div class="header">
+							<div class="form-group">
+								<input type="text" class="form-control" name="fullname" required="required" placeholder="İsim" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" name="email" required="required" placeholder="E-Posta" autocomplete="off">
+							</div>
+						</div>
+						<div class="content">
+							<div class="form-group">
+								<textarea class="form-control" name="message" rows="5" required="required" placeholder="Aklından geçenler..."></textarea>
+							</div>
+						</div>
+						<div class="valid-feedback">Yorumda kullanılan profil resmi <b>gravatar</b> aracılığıyla alınmaktadır.</div>
+						<div class="recaptcha">
+							<div class="g-recaptcha" data-sitekey="6LeZYxQTAAAAAIUYm0OAJQHTumfF-thCvp0lziFU"></div>
+						</div>
+						<div class="button">
+							<button type="submit" class="button">Yorum Yap</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer article-container">
+		<div class="copyright">Copyright © 2019</div>
+		<div class="footer-menu">
+			<ul>
+				<li>
+					<a href="/">blog</a>
+				</li>
+				<li>
+					<a href="https://www.github.com/ahmettashan">projeler</a>
+				</li>
+				<li>
+					<a href="/hakkimda">hakkımda</a>
+				</li>
+				<li class="print-show">
+					e-posta: <strong>me@ahmettashan.com</strong>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.sticky-sidebar.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+.home{
+	.header{
+		margin-top: 32px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #dfe1e2;
+
+		h1{
+			color: $color-black;
+			display: inline-block;
+		}
+
+		p{
+			margin-top: 25px;
+			font-size: 13pt;
+		}
+
+		.nav{
+			ul{
+				list-style: none;
+				padding: 0;
+				display: flex;
+				li{
+					&.mobile-menu{
+						display: none;
+						input{
+							display: none;
+						}
+					}
+					&.post-item{
+						a{
+							display: block;
+							padding: 10px;
+							color: $color-black;
+							&:hover{
+								color: $color-blue;
+							}
+							&.external{
+								background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDE3OTIgMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjMDM2NmQ2IiBkPSJNMTQwOCA5Mjh2MzIwcTAgMTE5LTg0LjUgMjAzLjV0LTIwMy41IDg0LjVoLTgzMnEtMTE5IDAtMjAzLjUtODQuNXQtODQuNS0yMDMuNXYtODMycTAtMTE5IDg0LjUtMjAzLjV0MjAzLjUtODQuNWg3MDRxMTQgMCAyMyA5dDkgMjN2NjRxMCAxNC05IDIzdC0yMyA5aC03MDRxLTY2IDAtMTEzIDQ3dC00NyAxMTN2ODMycTAgNjYgNDcgMTEzdDExMyA0N2g4MzJxNjYgMCAxMTMtNDd0NDctMTEzdi0zMjBxMC0xNCA5LTIzdDIzLTloNjRxMTQgMCAyMyA5dDkgMjN6bTM4NC04NjR2NTEycTAgMjYtMTkgNDV0LTQ1IDE5LTQ1LTE5bC0xNzYtMTc2LTY1MiA2NTJxLTEwIDEwLTIzIDEwdC0yMy0xMGwtMTE0LTExNHEtMTAtMTAtMTAtMjN0MTAtMjNsNjUyLTY1Mi0xNzYtMTc2cS0xOS0xOS0xOS00NXQxOS00NSA0NS0xOWg1MTJxMjYgMCA0NSAxOXQxOSA0NXoiLz48L3N2Zz4);
+								background-repeat: no-repeat;
+								background-size: 15px 150%;
+								background-position: right;
+								padding-right: 22px;
+								margin-right: 5px;
+							}
+						}
+						&:first-child{
+							a{
+								padding-left: 0;
+							}
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: 480px) {
+				ul{
+					flex-direction: column;
+					li{
+						&.mobile-menu{
+							display: block;
+							position: absolute;
+							top: 70px;
+							right: 20px;
+							
+							#mobile-bar{
+								fill: $color-black;
+							}
+						}
+						&.post-item{
+							display: none;
+						}
+					}
+					&.mobile-menu-active{
+						li{
+							&.post-item{
+								display: flex;
+								justify-content: center;
+								a{
+									display: inline-block;
+								}
+							}
+							&.mobile-menu{
+								#mobile-bar{
+									fill: $color-blue;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.archive{
+	h2{
+		margin: 1.5rem 0;
+	}
+	ul.post-list{
+		padding: 0;
+		list-style: none;
+		h3{
+			margin-top: 2rem;
+			margin-bottom: 0.5rem;
+		}
+		li.post-item{
+			padding: 5px 0;
+			display: flex;
+			@media only screen and (max-width: 480px){
+				display: block;
+				padding: 7px 0;
+			}
+			.time{
+				margin-right: 10px;
+				min-width: 100px;
+				font-size: 10pt;
+				color: #6c6c6c;
+				margin-top: 3px;
+			}
+			.post-title{
+				a{
+					color: $color-black;
+					font-size: 14pt;
+					&:hover, &:focus{
+						color: $color-blue;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	
+}

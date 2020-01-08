@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");
+*{
+	font-family: "Roboto",Arial,sans-serif;
+}
+body{
+	background: transparent;
+	padding-bottom: 25px;
+	line-height: 1.4;
+}
+.header{
+	margin-top: 0;
+}
+.bayragim{
+	display: none;
+}
+.pagination{
+	display: none;
+}
+.footer{
+	ul{
+		li{
+			display: none;
+			&.print-show{
+				display: block;
+			}
+		}
+	}
+}
+.article-container{
+	width: 100%;
+	text-align: justify;
+	.sidebar{
+		display: none;
+	}
+	.main{
+		width: 100%;
+		margin: 0;
+		.shared{
+			display: none;
+		}
+		.comments{
+			display: none;
+		}
+	}
+}
