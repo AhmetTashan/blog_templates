@@ -16,4 +16,4 @@
 
 
 
-**Kaynakça: ** https://fatihhayrioglu.com/sass-klasor-yapisi/ 
+**Kaynakça**: https://fatihhayrioglu.com/sass-klasor-yapisi/ 
