@@ -2,7 +2,7 @@
 
 # My Blog
 
-Basit, responsive ve geliştirilmesi daha rahat olan blog geliştirmeye çalışıyoruz. 
+Basit, sade ve geliştirilmesi daha rahat olan blog geliştirmeye çalışıyoruz. 
 
 `vuejs` `sticky-sidebar` gibi bazı uygulamalardan destek aldık.
 
